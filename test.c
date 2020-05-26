@@ -22,7 +22,7 @@ void LLR(struct RBT *p,struct RBT **roots){
     else if(p1->parent->left==p)
         p1->parent->left=p1;
 }
-struct RBT * LRR(struct RBT *p,struct RBT **roots){
+void LRR(struct RBT *p,struct RBT **roots){
     struct RBT *p1=p->left;
     struct RBT *plr=p1->right;
     p1->right=plr->left;
@@ -42,7 +42,7 @@ struct RBT * LRR(struct RBT *p,struct RBT **roots){
     else if(plr->parent->left==p)
         plr->parent->left=plr;
 }
-struct RBT * RLR(struct RBT *p,struct RBT **roots){
+void RLR(struct RBT *p,struct RBT **roots){
     struct RBT *p1=p->right;
     struct RBT *plr=p1->left;
     p->right=plr->left;
