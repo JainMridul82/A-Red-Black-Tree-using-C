@@ -1,10 +1,7 @@
-The output is:
-                         40(Black)
-                    /                \
-                20(Red)            60(Red)
-             /          \         /        \
-         8(Black)   30(Black)   50(Black)   70(Black)
-        /     \                                   \
-     4(Red)   10(Red)                            80(Red)
-     
-    One can draw the requisite inorder, preorder and postorder traversals themselves.
+Inorder:        5[1]    10[0]   11[1]   20[0]   60[1]   70[0]   80[1]   100[0]  200[0]  203[1]  205[0]  210[1]  300[0]
+        400[0]
+-------------
+Preorder:       100[0]  20[0]   10[0]   5[1]    11[1]   70[0]   60[1]   80[1]   300[0]  203[1]  200[0]  205[0]  210[1]
+        400[0]
+Process returned 0 (0x0)   execution time : 0.031 s
+Press any key to continue.
