@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #define BLACK 0
 #define RED 1
+/*Mridul Jain*/
 struct RBT{
     struct RBT *parent,*left,*right;
     int data,color;
@@ -21,6 +22,8 @@ void LLR(struct RBT *p,struct RBT **roots){
         *roots=p1;
     else if(p1->parent->left==p)
         p1->parent->left=p1;
+    else if(p1->parent->right==p)
+        p1->parent->right=p1;
 }
 void LRR(struct RBT *p,struct RBT **roots){
     struct RBT *p1=p->left;
@@ -41,8 +44,11 @@ void LRR(struct RBT *p,struct RBT **roots){
         *roots=plr;
     else if(plr->parent->left==p)
         plr->parent->left=plr;
+    else if(plr->parent->right==p)
+        plr->parent->right=plr;
 }
 void RLR(struct RBT *p,struct RBT **roots){
+    printf("---%d-----",p->data);
     struct RBT *p1=p->right;
     struct RBT *plr=p1->left;
     p->right=plr->left;
@@ -61,6 +67,8 @@ void RLR(struct RBT *p,struct RBT **roots){
         *roots=plr;
     else if(plr->parent->right==p)
         plr->parent->right=plr;
+    else if(plr->parent->left==p)
+        plr->parent->left=plr;
 }
 void RRR(struct RBT *p,struct RBT **roots){
     struct RBT *p1=p->right;
@@ -77,6 +85,8 @@ void RRR(struct RBT *p,struct RBT **roots){
         *roots=p1;
     else if(p1->parent->right==p)
         p1->parent->right=p1;
+    else if(p1->parent->left==p)
+        p1->parent->left=p1;
 }
 void Inorder(struct RBT *p){
     if(p==NULL)
@@ -163,16 +173,20 @@ void Insert(struct RBT **roots,int key){
     Fix(node,roots);
 }
 int main(){
-    Insert(&root,10);
-    Insert(&root,20);
-    Insert(&root,30);
-    Insert(&root,50);
-    Insert(&root,40);
-    Insert(&root,60);
+    Insert(&root,100);
     Insert(&root,70);
+    Insert(&root,200);
+    Insert(&root,20);
+    Insert(&root,10);
+    Insert(&root,300);
+    Insert(&root,400);
+    Insert(&root,5);
+    Insert(&root,11);
+    Insert(&root,60);
     Insert(&root,80);
-    Insert(&root,4);
-    Insert(&root,8);
+    Insert(&root,205);
+    Insert(&root,203);
+    Insert(&root,210);
     printf("Inorder:\t");
     Inorder(root);
     printf("\n-------------\n");
