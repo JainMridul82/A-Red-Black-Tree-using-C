@@ -48,7 +48,6 @@ void LRR(struct RBT *p,struct RBT **roots){
         plr->parent->right=plr;
 }
 void RLR(struct RBT *p,struct RBT **roots){
-    printf("---%d-----",p->data);
     struct RBT *p1=p->right;
     struct RBT *plr=p1->left;
     p->right=plr->left;
